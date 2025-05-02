@@ -9,6 +9,10 @@ async function getTasks() {
       const lista = document.querySelector('.listTask');
 
       tasks.forEach(task =>{
+        const btDelete = document.createElement('button');
+        btDelete.className = 'btDelete';
+        btDelete.textContent = `Deletar`;
+
         const container = document.createElement('div');
         container.className = 'task';
 
@@ -24,6 +28,13 @@ async function getTasks() {
         const data = document.createElement('small');
         data.textContent = `Criado em: ${new Date(task.createdAt).toLocaleString()}`;
 
+        //Função de remover task 
+        btDelete.addEventListener('click', async () => {
+          await deleteTask(task.id);
+          container.remove();
+        });
+
+        container.appendChild(btDelete)
         container.appendChild(titulo);
         container.appendChild(descricao);
         container.appendChild(tipo);
