@@ -19,6 +19,7 @@ function salvarTask(){
         })
         clearField();
         console.log('Tarefa salva com sucesso');
+        location.reload();
     }catch(error){
         console.error('Falha ao salvar tarefa',error);
     }
