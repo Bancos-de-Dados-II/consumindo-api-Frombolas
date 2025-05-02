@@ -13,6 +13,10 @@ async function getTasks() {
         btDelete.className = 'btDelete';
         btDelete.textContent = `Deletar`;
 
+        const btUpdate = document.createElement('button');
+        btUpdate.className= 'btUpdate';
+        btUpdate.textContent = "Atualizar";
+
         const container = document.createElement('div');
         container.className = 'task';
 
@@ -34,7 +38,22 @@ async function getTasks() {
           container.remove();
         });
 
-        container.appendChild(btDelete)
+        //Função de atualizar task
+        btUpdate.addEventListener('click', async () => {
+          const novoTitulo = prompt('Novo título:', task.titulo);
+          const novaDescricao = prompt('Nova descrição:', task.descricao);
+        
+          if (novoTitulo !== null && novaDescricao !== null) {
+            await updateTask(task.id, {
+              titulo: novoTitulo,
+              descricao: novaDescricao,
+            });
+            location.reload();
+          }
+        });
+
+        container.appendChild(btDelete);
+        container.appendChild(btUpdate);
         container.appendChild(titulo);
         container.appendChild(descricao);
         container.appendChild(tipo);

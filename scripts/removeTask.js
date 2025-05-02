@@ -1,5 +1,3 @@
-const btDelete = document.getElementsByClassName("btDelete");
-
 async function deleteTask(id) {
     try{
         const resposta = await fetch(`http://localhost:3000/tasks/${id}`, {
