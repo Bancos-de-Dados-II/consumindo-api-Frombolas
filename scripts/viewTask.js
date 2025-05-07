@@ -32,6 +32,7 @@ async function getTasks() {
         const data = document.createElement('small');
         data.textContent = `Criado em: ${new Date(task.createdAt).toLocaleString()}`;
 
+        //Essas funções estão funcionando pois estão sendo carregadas no mesmo html
         //Função de remover task 
         btDelete.addEventListener('click', async () => {
           await deleteTask(task.id);
