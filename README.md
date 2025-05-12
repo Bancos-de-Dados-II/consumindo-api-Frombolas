@@ -1,1 +1,21 @@
-[![Review Assignment Due Date](https://classroom.github.com/assets/deadline-readme-button-22041afd0340ce965d47ae6ef1cefeee28c7c493a6346c4f15d667ab976d596c.svg)](https://classroom.github.com/a/d0bmJ7Jc)
+# Rodando a Api localmente!
+
+## Clonando o repositório:
+
+> No github (https://github.com/Frombolas/Banco2.git), clone o repostório no seu computador.
+
+**Necessário instalr o Node versão 20.0 + (https://nodejs.org/)**
+
+Acesse a pasta no local em que clonou e rode os seguintes comandos: 
+
+```
+npm install
+```
+Para instalar as dependências.
+
+```
+node index.js 
+```
+para rodar a API.
+
+**Atente-se em criar o banco de dados, além do arquivo .env**
